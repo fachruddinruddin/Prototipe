@@ -14,7 +14,9 @@ const Home = () => {
           See All Events
         </button>
       </div>
-      <EventList />
+
+      {/* Menampilkan hanya upcoming events */}
+      <EventList showToday={false} />
     </>
   );
 };

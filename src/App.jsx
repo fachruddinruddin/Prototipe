@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Events from "./components/EventList";
+import Event from "./pages/Event";
 import About from "./pages/About";
+import EventDetail from "./components/Eventdetail";
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/events" element={<Event />} />
+        <Route path="/events/:eventId" element={<EventDetail />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

@@ -1,8 +1,11 @@
 import React from 'react';
 
-const EventCard = ({ category, title, date }) => {
+const EventCard = ({ category, title, date, onEventClick, eventId }) => {
     return (
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div 
+        className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+        onClick={() => onEventClick(eventId)}
+      >
         <div className="h-48 bg-[#343434]"></div>
         <div className="p-4">
           <div className="flex flex-wrap gap-2 mb-2">
