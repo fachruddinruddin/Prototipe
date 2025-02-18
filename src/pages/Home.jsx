@@ -1,7 +1,14 @@
 import React from "react";
 import EventList from "../components/EventList";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleEventClick = (eventId) => {
+    navigate(`/events/${eventId}`);
+  };
+
   return (
     <>
       <div className="bg-[#343434] text-white text-center py-40">
@@ -16,7 +23,7 @@ const Home = () => {
       </div>
 
       {/* Menampilkan hanya upcoming events */}
-      <EventList showToday={false} />
+      <EventList showToday={false} onEventClick={handleEventClick} />
     </>
   );
 };
