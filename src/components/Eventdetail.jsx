@@ -71,7 +71,7 @@ const EventDetail = () => {
             Open Source on The School
           </h1>
 
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4 text-[#343434]">
             <p>Hallo Doscomers!!!</p>
 
             <p>
