@@ -3,7 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
     const location = useLocation();
     const getLinkClass = (path) => 
-        location.pathname === path ? "text-[#343434] font-semibold" : "text-gray-600 hover:text-black";
+        location.pathname === path || (path === "/events" && location.pathname.startsWith("/events"))
+            ? "text-[#343434] font-semibold"
+            : "text-gray-600 hover:text-black";
 
     return (
         <nav className="flex items-center justify-between p-5 bg-white shadow-md">
