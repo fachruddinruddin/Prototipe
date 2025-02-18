@@ -2,7 +2,7 @@ import React from "react";
 import EventList from "../components/EventList";
 import { useNavigate } from "react-router-dom";
 
-const Event = () => {
+const Events = () => {
   const navigate = useNavigate();
 
   const handleEventClick = (eventId) => {
@@ -16,4 +16,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default Events;

@@ -12,7 +12,7 @@ const EventCard = ({ id, category, title, date, onEventClick }) => {
           {category.map((cat, index) => (
             <span 
               key={index} 
-              className="inline-block text-xs font-medium px-3 py-1 rounded-full bg-[#343434] text-white"
+              className="inline-block text-xs font-medium px-3 py-1 rounded-lg bg-[#343434] text-white"
             >
               {cat}
             </span>

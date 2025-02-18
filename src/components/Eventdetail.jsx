@@ -21,49 +21,55 @@ const EventDetail = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Left Column - Image */}
-        <div className="col-span-1">
+        <div className="col-span-1 space-y-6">
           <div className="w-full h-56 bg-[#343434] rounded-lg mb-7"></div>
 
           {/* Event Info Cards */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
+          <div className="space-y-6 mx-12 text-[#343434]">
+            <div className="flex items-center gap-4">
               <Calendar className="w-5 h-5" />
-              <span>Sunday 21 - Tuesday 24 October 2024</span>
+              <span>
+                <span className="font-semibold">Sunday 21 - Tuesday 24</span> October 2024
+              </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 font-semibold">
               <Clock className="w-5 h-5" />
               <span>08:00 - 12.00</span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 font-semibold">
               <MapPin className="w-5 h-5" />
               <span>UDINUS H6</span>
             </div>
 
             <div className="flex items-center gap-3">
               <Users className="w-5 h-5" />
-              <span>50 Participant</span>
+              <span>
+                <span className="font-semibold">50</span> Participant
+              </span>
             </div>
-
-            <button className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors">
-              Register
-            </button>
           </div>
+
+          <button className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors">
+            Register
+          </button>
         </div>
 
         {/* Right Column - Event Details */}
         <div className="col-span-2 space-y-6">
           <div className="flex gap-2 mb-4">
-            <span className="px-3 py-1 bg-[#343434] text-white text-sm rounded-full">
+            <span className="px-3 py-1 bg-[#343434] text-white text-sm font-semibold rounded-lg">
               RKT
             </span>
-            <span className="px-3 py-1 bg-[#343434] text-white text-sm rounded-full">
+            <span className="px-3 py-1 bg-[#343434] text-white text-sm font-semibold rounded-lg">
               Programming
             </span>
           </div>
 
-          <h1 className="text-3xl font-bold mb-6">Open Source on The School</h1>
+          <h1 className="text-2xl text-[#343434] font-bold mb-6">
+            Open Source on The School
+          </h1>
 
           <div className="space-y-4 text-gray-700">
             <p>Hallo Doscomers!!!</p>

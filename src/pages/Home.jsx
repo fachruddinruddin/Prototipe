@@ -17,7 +17,7 @@ const Home = () => {
           <div className="text-6xl ml-2">FORM</div>
         </div>
 
-        <button className="bg-white text-gray-800 font-semibold py-2 px-6 rounded-full">
+        <button className="bg-white text-gray-800 font-semibold py-2 px-10 rounded-lg hover:bg-gray-200 transition-colors">  
           See All Events
         </button>
       </div>
