@@ -34,9 +34,9 @@ const EventDetail = () => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column - Image */}
-        <div className="col-span-1 space-y-6">
+        <div className="col-span-1 space-y-6 border-r-2 border-gray-400 pr-8">
           <div className="w-full h-56 bg-[#343434] rounded-lg mb-7"></div>
 
           {/* Event Info Cards */}
@@ -93,7 +93,7 @@ const EventDetail = () => {
                   5 days!
                 </span>
               </div>
-              
+
             </form>
           )}
 
