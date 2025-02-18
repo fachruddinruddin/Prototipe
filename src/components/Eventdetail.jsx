@@ -1,7 +1,22 @@
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const EventDetail = () => {
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleRegisterClick = () => {
+    setShowEmailInput(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log("Email submitted:", email);
+    setShowEmailInput(false); // Sembunyikan input setelah submit
+  };
+
   return (
     <div className="px-12 py-8">
       {/* Breadcrumb Navigation */}
@@ -29,7 +44,8 @@ const EventDetail = () => {
             <div className="flex items-center gap-4">
               <Calendar className="w-5 h-5" />
               <span>
-                <span className="font-semibold">Sunday 21 - Tuesday 24</span> October 2024
+                <span className="font-semibold">Sunday 21 - Tuesday 24</span>{" "}
+                October 2024
               </span>
             </div>
 
@@ -51,9 +67,45 @@ const EventDetail = () => {
             </div>
           </div>
 
-          <button className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors">
-            Register
-          </button>
+          {/* Email Input (Muncul di atas tombol Register) */}
+          {showEmailInput && (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="email"
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button
+                type="submit"
+                className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors font-semibold"
+              >
+                Notify Me!
+              </button>
+
+              <div className="text-center">
+                <span className="text-[#343434] font-bold">
+                  <span className="text-gray-500 font-semibold">
+                    Registration Opens in
+                  </span>{" "}
+                  5 days!
+                </span>
+              </div>
+              
+            </form>
+          )}
+
+          {/* Tombol Register (Muncul jika input email tidak ditampilkan) */}
+          {!showEmailInput && (
+            <button
+              className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors"
+              onClick={handleRegisterClick}
+            >
+              Register
+            </button>
+          )}
         </div>
 
         {/* Right Column - Event Details */}
