@@ -14,7 +14,7 @@ const EventDetail = () => {
     e.preventDefault();
     // Handle form submission here
     console.log("Email submitted:", email);
-    setShowEmailInput(false); // Sembunyikan input setelah submit
+    setShowEmailInput(false); 
   };
 
   return (
