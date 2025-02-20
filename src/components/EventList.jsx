@@ -32,7 +32,7 @@ const upcomingEvents = events.slice(1);
 
 const TodayEvent = ({ onEventClick }) => (
   <section className="mb-8">
-    <h2 className="text-xl text-[#343434] font-semibold mb-5">Today's Event</h2>
+    <h2 className="text-xl text-[#343434] mb-5">Today's Event</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <EventCard {...todayEvent} onEventClick={onEventClick} />
     </div>
@@ -41,7 +41,7 @@ const TodayEvent = ({ onEventClick }) => (
 
 const UpcomingEvents = ({ onEventClick }) => (
   <section>
-    <h2 className="text-xl text-[#343434] font-semibold mb-5">Upcoming Events</h2>
+    <h2 className="text-xl text-[#343434] mb-5">Upcoming Events</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {upcomingEvents.map((event) => (
         <EventCard key={event.id} {...event} onEventClick={onEventClick} />
