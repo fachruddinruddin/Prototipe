@@ -16,6 +16,8 @@ const Navbar = () => {
                     <Link className={`text-1xl ${getLinkClass("/")}`} to="/">Home</Link>
                     <Link className={`text-1xl ${getLinkClass("/events")}`} to="/events">Events</Link>
                     <Link className={`text-1xl ${getLinkClass("/about")}`} to="/about">About</Link>
+                    <Link className={`text-1xl ${getLinkClass("/register")}`} to="/register">Register</Link>
+                    <Link className={`text-1xl ${getLinkClass("/login")}`} to="/login">Login</Link>
                 </div>
             </div>
         </nav>
