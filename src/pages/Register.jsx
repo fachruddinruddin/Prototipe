@@ -2,7 +2,7 @@ import React from "react";
 
 const SignUpForm = () => {
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex min-h-screen">
       {/* Left side - Dark background */}
       <div className="w-3/5 bg-[#343434]"></div>
 
@@ -84,7 +84,7 @@ const SignUpForm = () => {
             </form>
           </div>
         </div>
-        <div className="mx-8 pt-10 pb-3">
+        <div className="mx-8 mt-20 mb-2">
           <span className="text-xs">Have an account? </span>
           <a href="#" className="text-xs font-bold">
             Login
