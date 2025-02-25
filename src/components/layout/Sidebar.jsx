@@ -7,14 +7,14 @@ function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="w-60 bg-gray-800 text-white flex flex-col">
-      <div className="p-4 border-b border-gray-700 flex justify-center items-center">
+    <div className="w-60 bg-[#343434] text-white flex flex-col">
+      <div className="p-4 flex justify-center items-center">
         <h1 className="text-5xl font-bold">D</h1>
         <span className="ml-2 text-4xl">FORM</span>
       </div>
 
-      <div className="p-4 flex justify-center">
-        <button className="bg-gray-700 text-white rounded-lg py-2 px-4 w-full text-center">
+      <div className="p-6 flex justify-center">
+        <button className="bg-white/10 text-white rounded-lg py-2 px-4 text-center">
           New Event
         </button>
       </div>
