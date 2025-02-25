@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="flex min-h-screen bg-gray-100">
         <Sidebar />
-        <div className="flex-grow p-4">
+        <div className="flex-grow">
           <PageHeader /> {/* Add the PageHeader component */}
           <Routes>
             <Route path="/" element={<Dashboard />} />

@@ -33,7 +33,7 @@ function Sidebar() {
       <div className="mt-auto">
         <UserInfo 
           username="Username" 
-          email="emailexample@gmail.com" 
+          email="emailexample111111@gmail.com" 
         />
       </div>
     </div>
