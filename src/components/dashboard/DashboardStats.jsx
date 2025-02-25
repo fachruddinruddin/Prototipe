@@ -3,7 +3,7 @@ import StatCard from './StatCard';
 
 function DashboardStats() {
   return (
-    <div className="grid grid-cols-3 gap-3 px-10">
+    <div className="grid grid-cols-3 gap-3 px-10 pb-10">
       <StatCard 
         title="Ongoing Events"
         count={2}

@@ -1,12 +1,17 @@
 import React from 'react';
+import EventList from '../components/dashboard/EventList';
+import { useNavigate } from 'react-router-dom';
 
 function Events() {
+  const navigate = useNavigate();
+
+  const handleEventClick = (id) => {
+    navigate(`/events/${id}`);
+  };
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">Events</h1>
-      
-      {/* Event list would go here */}
-      <p>Event listing page content would go here.</p>
+    <div className="p-8">
+      <EventList showToday={true} showUpcoming={true} onEventClick={handleEventClick} />
     </div>
   );
 }
