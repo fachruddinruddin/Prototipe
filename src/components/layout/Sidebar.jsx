@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MenuItem from '../navigation/MenuItem';
 import UserInfo from '../common/UserInfo';
 
 function Sidebar() {
+  const location = useLocation();
+  
   return (
     <div className="w-60 bg-gray-800 text-white flex flex-col">
       <div className="p-4 border-b border-gray-700">
@@ -21,10 +23,10 @@ function Sidebar() {
       
       <div className="flex-grow overflow-y-auto">
         <Link to="/dashboard">
-          <MenuItem icon="menu" text="Dashboard" active={true} />
+          <MenuItem icon="menu" text="Dashboard" active={location.pathname === '/dashboard'} />
         </Link>
         <Link to="/events">
-          <MenuItem icon="list" text="Events" />
+          <MenuItem icon="menu" text="Events" active={location.pathname === '/events'} />
         </Link>
       </div>
       
