@@ -9,7 +9,7 @@ function Dashboard() {
       
       <DashboardStats />
       
-      <h2 className="text-xl font-medium mt-8 mb-4">Today's Event</h2>
+      <h2 className="text-[18px] mt-8 mb-4">Today's Event</h2>
       
       <div className="grid grid-cols-2 gap-6">
         <EventCard 
