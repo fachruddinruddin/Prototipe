@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SignUpForm = () => {
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   return (
     <div className="flex min-h-screen">
       {/* Left side - Dark background */}
@@ -34,6 +37,7 @@ const SignUpForm = () => {
                 />
               </div>
 
+              {/* Password Field (Tanpa Icon) */}
               <div className="mb-6">
                 <label htmlFor="password" className="block mb-2">
                   Password
@@ -42,11 +46,12 @@ const SignUpForm = () => {
                   type="password"
                   id="password"
                   className="w-full px-4 py-3 border-2 border-[#343434] rounded-xl"
-                  value="•••••••••"
-                  readOnly
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
+              {/* Confirm Password Field (Tanpa Icon) */}
               <div className="mb-8">
                 <label htmlFor="confirmPassword" className="block mb-2">
                   Confirm Password
@@ -55,8 +60,8 @@ const SignUpForm = () => {
                   type="password"
                   id="confirmPassword"
                   className="w-full px-4 py-3 border-2 border-[#343434] rounded-xl"
-                  value="•••••••••"
-                  readOnly
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
 
