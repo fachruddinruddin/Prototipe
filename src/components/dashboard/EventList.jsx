@@ -31,31 +31,31 @@ const events = [
 const todayEvent = events[0];
 const upcomingEvents = events.slice(1);
 
-const TodayEvent = ({ onEventClick }) => (
+const TodayEvent = () => (
   <section className="mb-8">
     <h2 className="text-xl text-[#343434] mb-5">Today's Event</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <EventCard {...todayEvent} onEventClick={onEventClick} />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <EventCard {...todayEvent} />
     </div>
   </section>
 );
 
-const UpcomingEvents = ({ onEventClick }) => (
+const UpcomingEvents = () => (
   <section>
     <h2 className="text-xl text-[#343434] mb-5">Upcoming Events</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {upcomingEvents.map((event) => (
-        <EventCard key={event.id} {...event} onEventClick={onEventClick} />
+        <EventCard key={event.id} {...event} />
       ))}
     </div>
   </section>
 );
 
-const EventList = ({ showToday = true, showUpcoming = true, onEventClick }) => {
+const EventList = ({ showToday = true, showUpcoming = true }) => {
   return (
     <div className="space-y-8">
-      {showToday && <TodayEvent onEventClick={onEventClick} />}
-      {showUpcoming && <UpcomingEvents onEventClick={onEventClick} />}
+      {showToday && <TodayEvent />}
+      {showUpcoming && <UpcomingEvents />}
     </div>
   );
 };

@@ -7,7 +7,7 @@ function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="w-60 bg-[#343434] text-white flex flex-col">
+    <div className="w-60 bg-[#343434] text-white flex flex-col fixed h-full">
       <div className="p-4 flex justify-center items-center">
         <h1 className="text-5xl font-bold">D</h1>
         <span className="ml-2 text-4xl">FORM</span>

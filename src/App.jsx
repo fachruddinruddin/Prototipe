@@ -4,6 +4,7 @@ import Sidebar from './components/layout/Sidebar';
 import PageHeader from './components/layout/PageHeader'; // Import the PageHeader component
 import Events from './pages/Events';
 import Dashboard from './pages/Dashboard'; // Import the Dashboard component
+import EventDetail from './pages/EventDetail'; // Import the EventDetail component
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} /> {/* Add the Dashboard route */}
             <Route path="/events" element={<Events />} />
+            <Route path="/events/:id" element={<EventDetail />} /> {/* Add the EventDetail route */}
             {/* Add other routes here */}
           </Routes>
         </div>

@@ -11,7 +11,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 pt-28 ml-60">
       <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
       <DashboardStats />
       {/* Menampilkan hanya today's event */}

@@ -18,7 +18,7 @@ const EventDetail = () => {
   };
 
   return (
-    <div className="px-12 py-8">
+    <div className="p-8 pt-28 ml-60">
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
         <Link to="/" className="hover:text-gray-900">

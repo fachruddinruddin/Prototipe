@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const EventCard = ({ id, category = [], title, date, onEventClick }) => {
+const EventCard = ({ id, category = [], title, date }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/events/${id}`);
+  };
+
   return (
     <div 
       className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform transform hover:scale-105"
-      onClick={() => onEventClick(id)}
+      onClick={handleClick}
     >
       <div className="h-48 bg-[#343434]"></div>
       <div className="p-4">

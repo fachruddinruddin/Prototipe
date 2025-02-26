@@ -10,7 +10,7 @@ function Events() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 pt-28 ml-60">
       <EventList showToday={true} showUpcoming={true} onEventClick={handleEventClick} />
     </div>
   );
