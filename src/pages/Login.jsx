@@ -18,7 +18,7 @@ const SignUpForm = () => {
           </div>
         </div>
 
-        <div className="max-w-md mx-auto w-96">
+        <div className="max-w-md mx-auto w-96 pt-10">
           {/* Form */}
           <div className="mt-12">
             <h2 className="text-3xl font-bold text-center mb-8">Log In</h2>
@@ -73,9 +73,9 @@ const SignUpForm = () => {
             </form>
           </div>
         </div>
-        <div className="mx-8 mt-20 mb-1">
+        <div className="mx-8 mt-20 pt-10">
           <span className="text-xs">Don't Have an account? </span>
-          <a href="#" className="text-xs font-bold">
+          <a href="/register" className="text-xs font-bold">
             Sign Up
           </a>
         </div>

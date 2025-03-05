@@ -89,9 +89,9 @@ const SignUpForm = () => {
             </form>
           </div>
         </div>
-        <div className="mx-8 mt-20 mb-2">
+        <div className="mx-8 mt-20 ">
           <span className="text-xs">Have an account? </span>
-          <a href="#" className="text-xs font-bold">
+          <a href="/login" className="text-xs font-bold">
             Login
           </a>
         </div>
