@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="flex min-h-screen">
@@ -52,6 +54,7 @@ const SignUpForm = () => {
               <div className="mb-6">
                 <button
                   type="submit"
+                  onClick={() => navigate("/dashboard")}
                   className="w-full bg-[#343434] text-white py-3 rounded-xl font-medium hover:bg-gray-800"
                 >
                   Log In
