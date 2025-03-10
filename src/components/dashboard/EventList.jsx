@@ -3,7 +3,7 @@ import EventCard from "./EventCard";
 import { events } from "../../data/events";
 
 const todayEvent = events[0];
-const ongoingEvents = events.slice(1, 4); 
+const ongoingEvents = events.slice(1, 4);
 const upcomingEvents = events.slice(1, 3);
 
 const TodayEvent = ({ showSeeAll }) => (
@@ -23,8 +23,23 @@ const TodayEvent = ({ showSeeAll }) => (
         )}
       </div>
     </div>
+
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <EventCard {...todayEvent} />
+    {/* Fungsi untuk scan qr dan details */} 
+      <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer">
+        <div className="h-36 sm:h-40 md:h-48 bg-[#343434]"></div>
+        <div className="p-3 sm:p-8 items-center">
+          <div className="flex flex-wrap gap-2 justify-center">
+            <button className="bg-[#343434] text-white px-4 py-2 rounded-lg mx-1 border-2 border-gray-400 transition-transform transform hover:scale-105 hover:bg-black/10 hover:text-black">
+              Scan QR
+            </button>
+            <button className="bg-white text-[#343434] px-4 py-2 rounded-lg mx-1 border-2 border-gray-400 transition-transform transform hover:scale-105 hover:bg-gray-200">
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -80,7 +95,7 @@ const UpcomingEvents = ({ showSeeAll }) => (
 );
 
 const EventList = ({
-  showToday = false, // Set to false to hide today's event
+  showToday = false, // Ensure this is set to false to hide today's event
   showOngoing = true,
   showUpcoming = true,
   showSeeAll = true,
