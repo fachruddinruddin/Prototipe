@@ -10,7 +10,7 @@ function DashboardStats() {
         bgColor="bg-[#343434]"
       />
       <StatCard 
-        title="Incoming Events"
+        title="Upcomming Events"
         count={5}
         bgColor="bg-[#343434]"
       />

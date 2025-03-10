@@ -14,12 +14,13 @@ function Dashboard() {
     <div className="p-8 pt-28 ml-60">
       <h1 className="text-3xl font-bold mb-8">Dashboard</h1>
       <DashboardStats />
-      {/* Menampilkan hanya today's event */}
+      {/* Menampilkan hanya ongoing events */}
       <EventList
-        showToday={true}
+        showToday={true} 
+        showOngoing={false}
         showUpcoming={false}
         onEventClick={handleEventClick}
-        showSeeAll={false} // Hide the "See All" button
+        showSeeAll={false} 
       />
     </div>
   );
