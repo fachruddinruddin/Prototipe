@@ -1,7 +1,8 @@
 import React from 'react';
 import EventCard from './EventCard';
 
-const events = [
+// Ekspor array events agar bisa dipakai di file lain
+export const events = [
   { 
     id: 1,
     category: ["RKT", "Programming"], 
