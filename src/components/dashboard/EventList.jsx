@@ -1,49 +1,50 @@
-import React from 'react';
-import EventCard from './EventCard';
-
-// Ekspor array events agar bisa dipakai di file lain
-export const events = [
-  { 
-    id: 1,
-    category: ["RKT", "Programming"], 
-    title: "Open Source on The School", 
-    date: "21 - 24 October 2024"
-  },
-  { 
-    id: 2,
-    category: ["RKT", "Programming"], 
-    title: "Open Source on The School", 
-    date: "21 - 24 October 2024"
-  },
-  { 
-    id: 3,
-    category: ["NON-RKT", "Networking"], 
-    title: "DOSCOM SHARING TIME: Docker", 
-    date: "21 October 2024"
-  },
-  { 
-    id: 4,
-    category: ["NON-RKT", "Networking"], 
-    title: "DOSCOM SHARING TIME: Docker", 
-    date: "21 October 2024"
-  },
-];
+import React from "react";
+import EventCard from "./EventCard";
+import { events } from "../../data/events"; // Import events from the new data file
 
 const todayEvent = events[0];
 const upcomingEvents = events.slice(1);
 
-const TodayEvent = () => (
+const TodayEvent = ({ showSeeAll }) => (
   <section className="mb-8">
-    <h2 className="text-xl text-[#343434] mb-5">Today's Event</h2>
+    <div className="flex justify-between items-center mb-3 sm:mb-5">
+      <div className="flex items-center">
+        <h2 className="text-lg sm:text-1xl text-[#343434] font-medium mr-3">
+          Today's Event
+        </h2>
+        {showSeeAll && (
+          <button className="text-sm text-white bg-[#343434] px-3 py-1 rounded-lg">
+            See All 
+            <span className="border border-white bg-white text-black ml-2 px-2 py-0 rounded-md">
+              {1}
+            </span>
+          </button>
+        )}
+      </div>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <EventCard {...todayEvent} />
     </div>
   </section>
 );
 
-const UpcomingEvents = () => (
+const UpcomingEvents = ({ showSeeAll }) => (
   <section>
-    <h2 className="text-xl text-[#343434] mb-5">Upcoming Events</h2>
+    <div className="flex justify-between items-center mb-3 sm:mb-5">
+      <div className="flex items-center">
+        <h2 className="text-lg sm:text-1xl text-[#343434] font-medium mr-3">
+          Upcoming Events
+        </h2>
+        {showSeeAll && (
+          <button className="text-sm text-white bg-[#343434] px-3 py-1 rounded-lg">
+            See All
+            <span className="border-white bg-white text-black ml-2 px-2 py-0 rounded-md">
+              {upcomingEvents.length}
+            </span>
+          </button>
+        )}
+      </div>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {upcomingEvents.map((event) => (
         <EventCard key={event.id} {...event} />
@@ -52,11 +53,11 @@ const UpcomingEvents = () => (
   </section>
 );
 
-const EventList = ({ showToday = true, showUpcoming = true }) => {
+const EventList = ({ showToday = true, showUpcoming = true, showSeeAll = true }) => {
   return (
     <div className="space-y-8">
-      {showToday && <TodayEvent />}
-      {showUpcoming && <UpcomingEvents />}
+      {showToday && <TodayEvent showSeeAll={showSeeAll} />}
+      {showUpcoming && <UpcomingEvents showSeeAll={showSeeAll} />}
     </div>
   );
 };

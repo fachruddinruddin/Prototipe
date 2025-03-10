@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { events } from '../dashboard/EventList'; // Import events from EventList
+import { events } from '../../data/events'; // Import events from the new data file
 
 function PageHeader() {
     const location = useLocation();
@@ -13,14 +13,14 @@ function PageHeader() {
 
     return (
         <div className="px-8 py-6 fixed w-[calc(100%-15rem)] left-60 bg-white z-10">
-            <div className="flex items-center hover:text-gray-900">
+            <div className="flex items-center">
                 <Link to="/dashboard" className="text-gray-500">Pages /</Link>
                 {pathnames.map((name, index) => {
                     const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
                     const isLast = index === pathnames.length - 1;
                     const displayName = name.match(/^\d+$/) ? getEventTitle(name) : name.charAt(0).toUpperCase() + name.slice(1); 
                     return isLast ? (
-                        <span key={name} className="ml-2 font-medium">{displayName}</span>
+                        <span key={name} className="ml-2 font-semibold text-gray-700">{displayName}</span>
                     ) : (
                         <Link key={name} to={routeTo} className="ml-2 text-gray-500">{displayName} /</Link>
                     );

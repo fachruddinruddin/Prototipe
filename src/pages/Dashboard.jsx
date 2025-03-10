@@ -19,6 +19,7 @@ function Dashboard() {
         showToday={true}
         showUpcoming={false}
         onEventClick={handleEventClick}
+        showSeeAll={false} // Hide the "See All" button
       />
     </div>
   );
