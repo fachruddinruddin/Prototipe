@@ -1,62 +1,34 @@
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Calendar, Clock, MapPin, Users, Copy as CopyIcon } from "lucide-react";
 
 const EventDetail = () => {
-  const [showEmailInput, setShowEmailInput] = useState(false);
-  const [email, setEmail] = useState("");
-  const [activeTab, setActiveTab] = useState("overview");
-
-  const handleRegisterClick = () => {
-    setShowEmailInput(true);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    setShowEmailInput(false);
-  };
-
   return (
     <div className="p-8 pt-28 ml-60">
-      {/* Breadcrumb Navigation */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-6">
-        <Link to="/" className="hover:text-gray-900">
-          Home
-        </Link>
-        <span>/</span>
-        <Link to="/events" className="hover:text-gray-900">
-          Events
-        </Link>
-        <span>/</span>
-        <span className="font-bold text-[#343434]">Open Source on The School</span>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left Column - Image */}
-        <div className="col-span-1 space-y-6 border-r-2 border-gray-400 pr-8">
-          <div className="w-full h-56 bg-[#343434] rounded-lg mb-7"></div>
-
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+        <div className="col-span-3">
+          <h1 className="text-3xl text-[#343434] font-bold mb-5">
+            Open Source on The School
+          </h1>
           {/* Event Info Cards */}
-          <div className="space-y-6 mx-12 text-[#343434]">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-[#343434]">
+            <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
               <span>
-                <span className="font-semibold">Sunday 21 - Tuesday 24</span> October 2024
+                <span className="font-semibold">Sunday 21 - Tuesday 24</span>{" "}
+                October 2024
               </span>
             </div>
 
-            <div className="flex items-center gap-3 font-semibold">
+            <div className="flex items-center gap-2 font-semibold">
               <Clock className="w-5 h-5" />
               <span>08:00 - 12.00</span>
             </div>
 
-            <div className="flex items-center gap-3 font-semibold">
+            <div className="flex items-center gap-2 font-semibold">
               <MapPin className="w-5 h-5" />
               <span>UDINUS H6</span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Users className="w-5 h-5" />
               <span>
                 <span className="font-semibold">50</span> Participant
@@ -64,111 +36,55 @@ const EventDetail = () => {
             </div>
           </div>
 
-          {/* Email Input (Muncul di atas tombol Register) */}
-          {showEmailInput && (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="email"
-                className="w-full p-2 border border-gray-300 rounded-lg"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors font-semibold cursor-pointer"
-              >
-                Notify Me!
-              </button>
-
-              <div className="text-center">
-                <span className="text-[#343434] font-bold">
-                  <span className="text-gray-500 font-semibold">Registration Opens in</span> 5 days!
-                </span>
-              </div>
-            </form>
-          )}
-
-          {/* Tombol Register (Muncul jika input email tidak ditampilkan) */}
-          {!showEmailInput && (
-            <button
-              className="w-full bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors cursor-pointer"
-              onClick={handleRegisterClick}
-            >
-              Register
-            </button>
-          )}
+          {/* Event Description */}
+          <div className="flex flex-col space-y-4 text-[#000000] mt-6">
+            <p>Hallo Doscomers!!!</p>
+            <p>
+              Tahun ini, OOTS hadir lebih spesial karena diselenggarakan
+              bersamaan dengan FIK FAIR! Jangan lewatkan kesempatan seru dan
+              berkesan ini di Universitas Dian Nuswantoro. Dapatkan ilmu dan
+              pengalaman dari pemateri-pemateri keren yang siap menginspirasi
+              kalian. Dijamin, tahun ini lebih seru daripada sebelumnya!
+            </p>
+            <p>Pemateri dan materi yang akan dibawakan:</p>
+          </div>
         </div>
 
-        {/* Right Column - Event Details */}
-        <div className="col-span-2 space-y-4">
-          <div className="flex gap-2 mb-4">
-            <span className="px-3 py-1 bg-[#343434] text-white text-sm rounded-lg">
-              RKT
-            </span>
-            <span className="px-3 py-1 bg-[#343434] text-white text-sm rounded-lg">
-              Programming
-            </span>
-          </div>
-
-          <h1 className="text-2xl text-[#343434] font-bold mb-6">Open Source on The School</h1>
-
-          {/* Tabs Navigation */}
-          <div className="flex border-2 rounded-lg border-gray-500 overflow-hidden w-max">
-            <button
-              className={`mx-1 my-1 py-2 px-6 text-sm rounded-lg transition-colors cursor-pointer ${
-                activeTab === "overview"
-                  ? "bg-[#343434] text-white"
-                  : "bg-white text-[#343434]"
-              }`}
-              onClick={() => setActiveTab("overview")}
-            >
-              Overview
-            </button>
-            <button
-              className={`mx-1 my-1 py-2 px-6 text-sm rounded-lg transition-colors cursor-pointer ${
-                activeTab === "speakers"
-                  ? "bg-[#343434] text-white"
-                  : "bg-white text-[#343434]"
-              }`}
-              onClick={() => setActiveTab("speakers")}
-            >
-              Speakers
-            </button>
-          </div>
-
-          {/* Tabs Content */}
-          <div className="space-y-4 text-[#000000] mt-4">
-            {activeTab === "overview" && (
-              <>
-                <p>Hallo Doscomers!!!</p>
-                <p>
-                  Tahun ini, OOTS hadir lebih spesial karena diselenggarakan bersamaan dengan FIK FAIR! Jangan lewatkan kesempatan seru dan
-                  berkesan ini di Universitas Dian Nuswantoro. Dapatkan ilmu dan pengalaman dari pemateri-pemateri keren yang siap menginspirasi
-                  kalian. Dijamin, tahun ini lebih seru daripada sebelumnya!
-                </p>
-                <p>Pemateri dan materi yang akan dibawakan:</p>
-              </>
-            )}
-
-            {activeTab === "speakers" && (
-              <>
-                <h2 className="text-xl font-bold">Speakers</h2>
-                <p>- Wildan - "Tailwind"</p>
-                <p>- Sulthan - "Git"</p>
-                <p>- Pemateri lainnya akan segera diumumkan...</p>
-              </>
-            )}
-          </div>
-
+        {/* Right Column - Buttom Coloms */}
+        <div className="col-span-1 space-y-4">
           {/* Contact Information */}
-          <div className="mt-6">
-            <p className="mb-2">Informasi lebih lanjut :</p>
-            <p> +62 899-5873-658 (wildan)</p>
-            <p> +62 877-0031-3085 (sulthan)</p>
+          <div className="flex justify-center">
+            <button className="w-48 bg-white border-2 border-black text-black py-2 rounded-xl font-medium hover:bg-gray-200">
+              Edit
+            </button>
+          </div>
+          <div className="flex justify-center">
+            <button className="w-48 bg-white border-2 border-black text-black py-2 rounded-xl font-medium hover:bg-gray-200">
+              Scan QR
+            </button>
+          </div>
+          <div className="flex justify-center">
+            <button className="w-48 bg-white border-2 border-black text-black py-2 rounded-xl font-medium hover:bg-gray-200">
+              Registration URL
+              <span>
+                <CopyIcon className="w-5 h-5 inline-block ml-2" />
+              </span>
+            </button>
           </div>
         </div>
+      </div>
+      <div className="text-center pt-48 pb-4">
+        <span className="font-bold text-gray-500">
+          CSV has not been uploaded!
+        </span>
+      </div>
+      <div className="items-center flex justify-center">
+        <button
+          type="submit"
+          className="w-48 bg-[#343434] text-white py-3 rounded-lg hover:bg-[#2a2a2a] transition-colors font-meidum cursor-pointer"
+        >
+          Upload CSV
+        </button>
       </div>
     </div>
   );
