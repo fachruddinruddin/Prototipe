@@ -40,13 +40,13 @@ const EventDetail = () => {
           <div className="flex flex-col space-y-4 text-[#000000] mt-6">
             <p>Hallo Doscomers!!!</p>
             <p>
-              Tahun ini, OOTS hadir lebih spesial karena diselenggarakan
-              bersamaan dengan FIK FAIR! Jangan lewatkan kesempatan seru dan
-              berkesan ini di Universitas Dian Nuswantoro. Dapatkan ilmu dan
-              pengalaman dari pemateri-pemateri keren yang siap menginspirasi
-              kalian. Dijamin, tahun ini lebih seru daripada sebelumnya!
+              Tahun ini, OOTS hadir lebih special karena diselenggarakan
+              bersamaan FIK FAIR! jangan lewatkan kesempatan seru dan berkesan
+              ini di Universitas Dian Nuswantoro. Dapatkan ilmu dan pengalaman
+              dari pemateri-pemateri keren yang siap menginspirasi kalian.
+              Dijamin, tahun ini lebih seru daripada sebelumnya!!!!
             </p>
-            <p>Pemateri dan materi yang akan dibawakan:</p>
+            <button className="flex font-bold text-[#343434]">Read more</button>
           </div>
         </div>
 
